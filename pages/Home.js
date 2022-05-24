@@ -2,17 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import PangImage from '../assets/seok.jpg';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
+    const navigate = useNavigate();
+
+    const handleClickButton = () => {
+        navigate('/question');
+    }
 return (
     <Wrapper>
-    <Header>프로젝트 이름 </Header>
+    <Header> 폰트 적용 </Header>
     <Contents>
-    <Title> 제목이 들어갈 곳 </Title>
+    <Title> fonts: EF_Diary </Title>
     <LogoImage>
         <img src={PangImage} className="rounded-circle" width ={350} height ={350}></img>
     </LogoImage>
     <Desc>프로젝트 설명 부분</Desc>
-    <Button> 버튼 활성화 </Button>
+    <Button onClick={handleClickButton}> 다른 페이지 라우팅 버튼 </Button>
     </Contents>
     </Wrapper>
 )
@@ -30,18 +36,22 @@ const Header = styled.div `
  display:flex;
  justify-content:center;
  align-items:center;
+ font-family: "EF_Diary";
+ 
 `
 const Contents = styled.div `
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction: column;
+
 `
 
 
 const Title = styled.div `
  font-size :30pt;
  margin-top: 40px;
+ font-family: "EF_Diary";
 
 `
 const LogoImage = styled.div `
@@ -52,4 +62,6 @@ const LogoImage = styled.div `
 const Desc = styled.div`
  font-size: 20pt;
  margin-top: 50px;
+ font-family: "EF_Diary";
+ 
 `
